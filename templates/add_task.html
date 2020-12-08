@@ -1,0 +1,35 @@
+{% extends 'inc/body.html' %}
+{% block title %}
+Add Task
+{% endblock title %}
+{% block body %}
+<div class="contactus-form">
+    <h1>
+        Add Task
+    </h1>
+    <span class="al-message">
+        {% for message in messages %}
+        <div class="alert alert-danger">
+            <strong>{{ message }}</strong>
+        </div>
+        {% endfor %}
+    </span>
+    <form action="" method="POST" autocomplete="off">
+
+        {% for f in form %}
+        <div class="custom-group">
+            <label>{{f.label}}</label>
+            {{ f.errors }}
+            {{f}}
+        </div>
+        {% endfor %}
+
+        {% csrf_token %}
+
+        <div class="custom-group">
+            <input type="submit" value="SUBMIT">
+        </div>
+
+    </form>
+</div>
+{% endblock body %}

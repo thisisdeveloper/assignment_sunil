@@ -1,0 +1,188 @@
+
+h1{
+    font-size: 36px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+a,a:hover{
+    text-decoration: none;
+}
+form{
+    margin-top: 21px;
+}
+.contactus-form{
+    width: 60%;
+    margin: auto;
+    margin-top: 13px;
+    background-color:#ecebeb;
+    padding: 20px 90px 40px 90px;
+}
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+input,select{
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    height: 36px;
+    border: 1px solid #0087AA;
+    outline: #0087AA;
+    background: #FFFFFF;
+    width: 100%;
+}
+input[type='submit'] {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    height: 36px;
+    background: #0087AA;
+    color: #FFFFFF;
+    margin-top: 30px;
+}
+input[type='submit']:hover{
+    background-color: #1997B7;
+}
+label,input{
+    display: block;
+}
+.custom-group{
+    margin-top: 5px;
+}
+.navbar-brand{
+    font-size: 28px;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    margin-left: 30px;
+    margin-top: -16px;
+}
+nav ul{
+    list-style: none;
+}
+nav ul li{
+    display: inline-block;
+    width: 150px;
+    background:#ecebeb;
+    padding: 10px;
+    text-align: center;
+    border-radius: 50px;
+    margin-right: 30px;
+    font-size: 16px;
+    margin-top:5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav ul li:hover {
+    background: rgb(202, 202, 230);
+}
+nav ul li a{
+    text-decoration: none;
+    color: #000000;
+}
+nav ul li a:hover {
+    text-decoration: none;
+}
+.login-form{
+    width: 40%;
+    margin: auto;
+    margin-top: 100px;
+}
+.login-form form{
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    padding: 30px;
+}
+.login-group{
+    border: 2px groove #ddd !important;
+    padding: 10px;
+}
+.login-group a{
+    color: black;
+}
+fieldset.legend-border {
+    border: 3px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow: 0px 0px 0px 0px #000;
+    box-shadow: 0px 0px 0px 0px #000;
+}
+
+legend.legend-border {
+    width: inherit;
+    padding: 0 10px;
+    border-bottom: none;
+}
+.filter{
+    width: 400px;
+    margin-left: 25px;
+}
+.filter input{
+    padding:10px;
+}
+textarea{
+    min-width: 100%;
+    max-width: 100%;
+}
+.logout{
+    background: none;
+    border-radius: none;
+    border: none;
+    margin-left:0;
+    width: 40px;
+}
+.logout:hover{
+    background: none;
+}
+.errorlist {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+@media screen and (max-width: 992px) {
+    .contactus-form {
+        width: 95%;
+        margin-top: 10px;
+        padding: 15px 10px 15px 10px;
+    }
+    nav ul li {
+        width: 100px;
+        margin-right:-3px;
+    }
+    
+    .navbar {
+        padding: .5rem 0.5rem;
+    }
+    .navbar-brand {
+        margin-left: 0px;
+    }
+    .login-form {
+        width: 90%;
+        margin-top: 50px;
+    }
+    .filter{
+        width: 95%;
+        margin:auto;
+    }
+    .dinput{
+        margin-top:5px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .contactus-form {
+        width: 100%;
+        margin-top: 10px;
+        padding: 5px 5px 5px 5px;
+    }
+
+    nav ul li {
+        width: 80px;
+        margin-right: -3px;
+        font-size: 10px;
+    }
+
+    .navbar {
+        padding: .5rem 0.5rem;
+    }
+
+    .navbar-brand {
+        margin-left: 0px;
+    }
+}

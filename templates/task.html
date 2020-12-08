@@ -1,0 +1,103 @@
+{% extends 'inc/body.html' %}
+{% block title %}
+Tasks
+{% endblock title %}
+{% block body %}
+{% load static %}
+<div class="mt-5">
+    <h3>
+        Tasks
+    </h3>
+    <span class="al-message">
+        {% for message in messages %}
+        <div class="alert alert-danger">
+            <strong>{{ message }}</strong>
+        </div>
+        {% endfor %}
+    </span>
+    <div class="chatbox">
+        <div class="filter">
+            <form action="{% url 'task' %}" id="chart-form">
+                <div class="row">
+                    <div class="col-md-6 col-sm-3 dinput pl-0">
+                        <label for="">Start Date</label>
+                        <input type="date" name="start" id="" class="dinput">
+                    </div>
+                    <div class="col-md-6 col-sm-3 dinput pl-0">
+                        <label for="">End Date</label>
+                        <input type="date" name="end" id="" class="dinput">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="table-responsive mt-5">
+        <table class="table">
+            <tr>
+                <th>Task</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Status</th>
+                <th>Details</th>
+                <th>Action</th>
+            </tr>
+            <tbody id="tasks">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        render(url = '', {});
+        $('.dinput').change(function () {
+            $('#chart-form').submit();
+        });
+        $('#chart-form').submit(function (e) {
+            e.preventDefault();
+            var url = $(this).attr("action");
+            var formval = $(this)[0];
+            var data = new FormData(formval);
+            render(url, data);
+        });
+
+        function render(url, data) {
+            $.ajax({
+                url: url,
+                method: "POST",
+                data: data,
+                dataType: "json",
+                processData: false,
+                contentType: false,
+                cache: false,
+                success: function (data) {
+                    $("#tasks").html('');
+                    if (data) {
+                        $.each(data, function (i, item) {
+                            $.each(data[i], function (i, item) {
+                                drawRow(item);
+                            });
+                        });
+                    }
+
+                },
+                error: function (data) {
+                    console.log('sasd');
+                }
+            });
+        }
+
+        function drawRow(rowData) {
+            var row = $(" <tr / > ")
+            $("#tasks").append(row);
+            row.append($("<td><a href='/update/" + rowData.id + "'>" + rowData.task + "</a></td>"));
+            row.append($("<td>" + rowData.start_date + "</td>"));
+            row.append($("<td>" + rowData.end_date + "</td>"));
+            row.append($("<td>" + rowData.status + "</td>"));
+            row.append($("<td>" + rowData.details + "</td>"));
+            row.append($("<td><a href='/delete/" + rowData.id + "'>x</a></td>"));
+
+        }
+    });
+</script>
+{% endblock body %}
